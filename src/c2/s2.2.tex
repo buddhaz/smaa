@@ -108,13 +108,199 @@
             xAx' = \sum_{i=1}^n a_{ii}x_i^2 + 2\sum_{\substack{i=1\\j>i}}^n a_{ij}x_ix_j
         }$.
     \item % 6
+        略.
     \item % 7
+        \begin{proof}
+            \begin{align*}
+                & (I_n - A)(I_n + A + A^2 + \cdots + A^{n-1}) \\
+                ={} & (I_n - A)I_n + (I_n - A)A + (I_n - A)A^2 + \cdots + (I_n - A)A^{n-1} \\
+                ={} & I_n \cdot I_n - A + A - A^2 + A^2 - A^3 + \cdots + A^{n-1} - A^n \\
+                ={} & I_n - A^n \\
+                ={} & I_n. \qedhere    
+            \end{align*}
+        \end{proof}
     \item % 8
+        \begin{proof}
+            用数学归纳法. 当阶数为 $2$ 时, 则有
+            \[
+                \left(
+                    \begin{array}{cccc}
+                        0 & 1 \\
+                        0 & 0
+                    \end{array}
+                \right)
+                \left(
+                    \begin{array}{cccc}
+                        0 & 1 \\
+                        0 & 0
+                    \end{array}
+                \right)
+                =
+                \left(
+                    \begin{array}{cccc}
+                        0 & 0 \\
+                        0 & 0
+                    \end{array}
+                \right).   
+            \]
+            假设阶数为 $n - 1$ 时, $A^{n-1} = 0$ (其中 $A$ 为 $n-1$ 阶方阵) 成立. 现考察 $A^n$ (其中 $A$ 为 $n$ 阶方阵). 由归纳假定, 可知
+            \[
+                A^{n-1} =
+                \left(
+                    \begin{array}{ccccc}
+                        0 & 0 & 0 & \cdots & 0 \\
+                        0 & 0 & 0 & \cdots & 0 \\
+                        \vdots & \vdots & \vdots &  & \vdots \\
+                        0 & 0 & 0 & \cdots & 1 \\
+                        0 & 0 & 0 & \cdots & 0
+                    \end{array}
+                \right),
+            \] 
+            即 $A^{n-1}$ 除 $(n-1, n)$ 元素为 $1$ 之外, 其余元素均为 $0$. 因此 $A^{n-1}A = A^n = 0$.
+        \end{proof}
     \item % 9
+        \begin{proof}
+            设
+            \[
+                A =
+                \left(
+                    \begin{array}{cccc}
+                        a_{11} & a_{12} & \cdots & a_{1n} \\
+                        a_{12} & a_{22} & \cdots & a_{2n} \\
+                        \vdots & \vdots &  & \vdots \\
+                        a_{1n} & a_{2n} & \cdots & a_{nn}
+                    \end{array}
+                \right).    
+            \]
+            那么
+            \[
+                A^2 =
+                \left(
+                    \begin{array}{cccc}
+                        a_{11}^2 + \cdots + a_{1n}^2 & * & \cdots & * \\
+                        * & a_{12}^2 + \cdots + a_{2n}^2 & \cdots & * \\
+                        \vdots & \vdots &  & \vdots \\
+                        * & * & \cdots & a_{1n}^2 + \cdots + a_{nn}^2
+                    \end{array}
+                \right),
+            \]
+            即 $a_{11}^2 + \cdots + a_{1n}^2 = a_{12}^2 + \cdots + a_{2n}^2 = \cdots = a_{1n}^2 + \cdots + a_{nn}^2 = 0$. 因此 $A = 0$.
+        \end{proof}
     \item % 10
+        \begin{proof}
+            \begin{align*}
+                & \left(
+                    \begin{array}{cccc}
+                        a_{11} & \cdots & a_{1n} \\
+                        \vdots &  & \vdots \\
+                        a_{n1} & \cdots & a_{nn}
+                    \end{array}
+                \right) \\
+                ={} &
+                \left(
+                    \begin{array}{cccc}
+                        a_{11} & \cdots & \dfrac{a_{1n}+a_{n1}}{2} \\
+                        \vdots &  & \vdots \\
+                        \dfrac{a_{1n}+a_{n1}}{2} & \cdots & a_{nn}
+                    \end{array}
+                \right)
+                +
+                \left(
+                    \begin{array}{cccc}
+                        0 & \cdots & \dfrac{a_{1n}-a_{n1}}{2} \\
+                        \vdots &  & \vdots \\
+                        -\dfrac{a_{1n}-a_{n1}}{2} & \cdots & 0
+                    \end{array}
+                \right). \qedhere 
+            \end{align*}
+        \end{proof}
     \item % 11
+        结论是显然的, 运用矩阵乘法的规则即可证明.
     \item % 12
+        \begin{enumerate}[(1)]
+            \item % 12.1
+                设
+                \[
+                    B =
+                    \left(
+                        \begin{array}{cccc}
+                            a & b \\
+                            c & d
+                        \end{array}
+                    \right).    
+                \]
+                那么
+                \[
+                    BA =
+                    \left(
+                        \begin{array}{cccc}
+                            a & a+b \\
+                            c & c+d
+                        \end{array}
+                    \right),\ 
+                    AB =
+                    \left(
+                        \begin{array}{cccc}
+                            a+c & b+d \\
+                            c & d
+                        \end{array}
+                    \right).
+                \]
+                由 $BA = AB$, 解得
+                \[
+                    B =
+                    \left(
+                        \begin{array}{cccc}
+                            x & y \\
+                            0 & x
+                        \end{array}
+                    \right).
+                \]
+                其中 $x, y \in \mathrm{R}$.
+            \item % 12.2
+                同 (1).
+        \end{enumerate}
     \item % 13
+        \begin{enumerate}[(1)]
+            \item % 13.1
+                \begin{proof}
+                    必要性. $AB$ 的第 $(i, j)$ 元为
+                    \[
+                        \sum_{k=1}^n a_{ik}b_{kj}
+                    \]
+                    因为 $AB$ 是对称阵, 故 $(i, j)$ 元就是 $(j, i)$ 元, 即
+                    \[
+                        \sum_{k=1}^n a_{ik}b_{kj} = \sum_{k=1}^n a_{jk}b_{ki}.    
+                    \]
+                    $BA$ 的 $(i, j)$ 元为
+                    \[
+                        \sum_{k=1}^n b_{ik}a_{kj},    
+                    \]
+                    因为 $A$, $B$ 都是对称阵, 故 $b_{ik} = b_{ki}$, $a_{kj} = a_{jk}$, 故 $BA$ 的 $(i, j)$ 元也可写为
+                    \[
+                        \sum_{k=1}^n a_{jk}b_{ki}.   
+                    \]
+                    这正是 $AB$ 的 $(j, i)$ 元也即是 $AB$ 的 $(i, j)$ 元. 因此 $AB = BA$.
+                    
+                    充分性反推回去即可.
+                \end{proof}
+            \item % 13.2
+                \begin{proof}
+                    记 $AB(i, j)$ 为 $AB$ 的第 $(i, j)$ 元素, 那么
+                    \[
+                        AB(i, j) = \sum_{k=1}^n a_{ik}b_{kj},   
+                    \]
+                    又 $AB$ 是反对称阵, 故
+                    \[
+                        AB(i, j) = -AB(j, i) = -\sum_{k=1}^n a_{jk}b_{ki} = \sum_{k=1}^n a_{jk}(-b_{ki}),  
+                    \]
+                    又 $A$ 是对称阵, $B$ 是同阶的反对称阵, 故 $a_{jk} = a_{kj}$, $-b_{ki} = b_{ik}$, 也就是
+                    \[
+                        \sum_{k=1}^n a_{jk}(-b_{ki}) = \sum_{k=1}^n b_{ik}a_{kj} = BA(i, j).    
+                    \]
+                    因此 $AB(i, j) = BA(j, i)$, 即 $AB = BA$.
+                \end{proof}
+        \end{enumerate}
     \item % 14
     \item % 15
 \end{enumerate}
