@@ -1,0 +1,84 @@
+% @author Shuning Zhang
+% @date 2020-04-17
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{enumerate}[(1)]
+            \item % 1.1
+                $
+                    \dfrac13
+                    \left(
+                        \begin{array}{ccc}
+                            5 & -2 & -1 \\
+                            -1 & 1 & 2 \\
+                            1 & -1 & 1
+                        \end{array}
+                    \right)
+                $;
+            \item % 1.2
+                $
+                    \left(
+                        \begin{array}{cccc}
+                            a_1^{-1} & 0 & \cdots & 0 \\
+                            0 & a_2^{-1} & \cdots & 0 \\
+                            \vdots & \vdots &  & \vdots \\
+                            0 & 0 & \cdots & a_n^{-1}
+                        \end{array}
+                    \right)
+                $.
+        \end{enumerate}
+    \item % 2
+        $
+            X =
+            \left(
+                \begin{array}{ccc}
+                    -4 & 2 & 1 \\
+                    4 & -1 & 2 \\
+                    3 & -1 & 1
+                \end{array}
+            \right)
+            \left(
+                \begin{array}{c}
+                    8 \\
+                    11 \\
+                    -11
+                \end{array}
+            \right)
+            =
+            \left(
+                \begin{array}{c}
+                    1 \\
+                    -1 \\
+                    2
+                \end{array}
+            \right)
+        $.
+    \item % 3
+        \begin{proof}
+            \[
+                (A^k)^{-1} = \underbrace{AA \cdots A}_{k\ \text{项}} = \underbrace{A^{-1}A^{-1}\cdots A^{-1}}_{k\ \text{项}} = (A^{-1})^k. \qedhere   
+            \]
+        \end{proof}
+    \item % 4
+        \begin{proof}
+            设 $A$ 的逆矩阵为 $A^{-1}$, 那么
+            \begin{align*}
+                A^{-1}AB = A^{-1}AC &\Leftrightarrow B = C, \\
+                BAA^{-1} = CAA^{-1} &\Leftrightarrow B = C. \qedhere
+            \end{align*}
+        \end{proof}
+    \item % 5
+        提示: 定理 2.3.1 的逆否命题.
+    \item % 6
+    \item % 7
+    \item % 8
+    \item % 9
+    \item % 10
+\end{enumerate}
+\end{document}
