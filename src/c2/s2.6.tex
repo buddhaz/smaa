@@ -1,0 +1,110 @@
+% @author Shuning Zhang
+% @date 2020-04-25
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{enumerate}[(1)]
+            \item % 1.1
+                $
+                    \left(
+                        \begin{array}{cccc}
+                            5 & -1 & 2 & 3 \\
+                            5 & 0 & 9 & 1 \\
+                            -2 & -5 & 0 & 0 \\
+                            0 & -4 & 0 & 0
+                        \end{array}
+                    \right)
+                $;
+            \item % 1.2
+                $
+                    \left(
+                        \begin{array}{cccc}
+                            1 & 1 & 0 & 0 \\
+                            0 & 0 & -1 & 1 \\
+                            0 & 0 & 1 & 1 \\
+                            1 & -1 & 0 & 2
+                        \end{array}
+                    \right)
+                $.
+        \end{enumerate}
+    \item % 2
+        \begin{enumerate}[(1)]
+            \item % 2.1
+                $
+                    \left(
+                        \begin{array}{cc}
+                            A_1B_{11} & A_1B_{12} \\
+                            A_2B_{21} & A_2B_{22}
+                        \end{array}
+                    \right)
+                $;
+            \item % 2.2
+                $
+                    \left(
+                        \begin{array}{ccc}
+                            A_{11}B_{11} & A_{11}B_{12}+A_{12}B_{22} & A_{11}B_{13}+A_{12}B_{23}+A_{13}B_{33} \\
+                            0 & A_{22}B_{22} & A_{22}B_{23}+A_{23}B_{33} \\
+                            0 & 0 & A_{33}B_{33}
+                        \end{array}
+                    \right)
+                $.
+        \end{enumerate}
+    \item % 3
+    \item % 4
+    \item % 5
+        $
+            \left(
+                \begin{array}{cc}
+                    0 & B^{-1} \\
+                    A^{-1} & 0
+                \end{array}
+            \right)
+        $.
+    \item % 6
+        提示: 引理 2.6.1.
+    \item % 7
+        \begin{proof}
+            \begin{align*}
+                \left|
+                    \begin{array}{cc}
+                        A & B \\
+                        B & A
+                    \end{array}
+                \right|
+                =
+                \left|
+                    \begin{array}{cc}
+                        A & B \\
+                        A+B & A+B
+                    \end{array}
+                \right|
+                =
+                \left|
+                    \begin{array}{cc}
+                        A-B & B \\
+                        0 & A+B
+                    \end{array}
+                \right|.
+            \end{align*}
+            再由引理 2.6.1 立即得出
+            \[
+                \left|
+                    \begin{array}{cc}
+                        A & B \\
+                        B & A
+                    \end{array}
+                \right|
+                =
+                |A+B||A-B|.    
+            \]
+        \end{proof}
+    \item % 8
+    \item % 9
+\end{enumerate}
+\end{document}
