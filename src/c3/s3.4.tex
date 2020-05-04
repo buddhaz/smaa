@@ -1,0 +1,140 @@
+% @author Shuning Zhang
+% @date 2020-05-03
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{multicols}{2}
+            \begin{enumerate}[(1)]
+                \item % 2.1
+                    线性相关;
+                \item % 2.2
+                    线性无关.
+            \end{enumerate}
+        \end{multicols}
+    \item % 2
+        线性相关, 即这三个向量组成的行列式等于零, 那么
+        \begin{align*}
+            \left|
+                \begin{array}{ccc}
+                    a & -\frac12 & -\frac12 \\
+                    -\frac12 & a & -\frac12 \\
+                    -\frac12 & -\frac12 & a
+                \end{array}
+            \right|
+            &=
+            \left|
+                \begin{array}{ccc}
+                    a+\frac12 & -\frac12 & -\frac12 \\
+                    0 & a & -\frac12 \\
+                    -a-\frac12 & -\frac12 & a
+                \end{array}
+            \right|
+            =
+            \left|
+                \begin{array}{ccc}
+                    a+\frac12 & -\frac12 & -\frac12 \\
+                    0 & a & -\frac12 \\
+                    0 & -1 & a-\frac12
+                \end{array}
+            \right| \\
+            &=
+            \left(a+\frac12\right)
+            \left|
+                \begin{array}{cc}
+                    a & -\frac12 \\
+                    -1 & a-\frac12
+                \end{array}
+            \right|
+            =
+            \left(a+\frac12\right)\left(a^2-\frac12a-\frac12\right)
+            = 0.
+        \end{align*}
+        解得 $a = -\dfrac12$ 或 $a = 1$.
+    \item % 3
+        否.
+    \item % 4
+        否.
+    \item % 5
+        取 $k_1, k_2, \cdots, k_m \in \mathrm{K}$, 令
+        \[
+            k_1(c\alpha_1) + k_2(c\alpha_2) + \cdots + k_m(c\alpha_m) = 0,    
+        \]
+        即
+        \[
+            c(k_1\alpha_1 + k_2\alpha_2 + \cdots + k_m\alpha_m) = 0.   
+        \]
+        因 $c \not= 0$, 故
+        \[
+            k_1\alpha_1 + k_2\alpha_2 + \cdots + k_m\alpha_m = 0,   
+        \]
+        又因 $\alpha_1, \alpha_2, \cdots, \alpha_m$ 线性无关, 故 $k_1 = k_2 = \cdots = k_m = 0$.
+    \item % 6
+        否.
+    \item % 7
+        \begin{proof}
+            若 $\alpha_1, \alpha_2, \cdots, \beta$ 线性无关, 命题得证.
+
+            若 $\alpha_1, \alpha_2, \cdots, \alpha_m, \beta$ 线性相关. 取 $k_1, \cdots, k_{m+1} \in \mathrm{K}$, 令
+            \[
+                k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{m}\alpha_m + k_{m+1}\beta = 0,    
+            \]
+            若 $k_{m+1} = 0$, 即 $k_1\alpha_1 + k_2\alpha_2 + \cdots + k_{m}\alpha_m = 0$, 因 $\alpha_1, \cdots, \alpha_m$ 线性无关, 所以 $k_1 = \cdots = k_m = 0$.
+            表明 $\alpha_1, \cdots, \alpha_m, \beta$ 线性无关, 与前提矛盾. 因此必有 $k_{m+1} \not= 0$, 则有
+            \[
+                \beta = -\frac{k_1}{k_{m+1}}\alpha_1 - \cdots -\frac{k_{m}}{k_{m+1}}\alpha_m,   
+            \]
+            即 $\beta$ 可由 $\alpha_1, \alpha_2, \cdots, \alpha_m$ 线性表示.
+        \end{proof}
+    \item % 8
+        \begin{proof}
+            取 $k_1, k_2, \cdots, k_m \in \mathrm{K}$, 令
+            \[
+                k_1(A\alpha_1) + k_2(A\alpha_2) + \cdots + k_m(A\alpha_m) = 0,  
+            \]
+            根据矩阵乘法的运算法则, 则有
+            \[
+                A(k_1\alpha_1) + A(k_2\alpha_2) + \cdots + A(k_m\alpha_m) = 0,    
+            \]
+            在上式两边同乘以 $A^{-1}$, 则有
+            \[
+                k_1\alpha_1 + k_2\alpha_2 + \cdots + k_m\alpha_m = 0.    
+            \]
+            因 $\alpha_1, \alpha_2, \cdots, \alpha_m$ 线性无关, 故 $k_1 = k_2 = \cdots = k_m = 0$.
+        \end{proof}
+    \item % 9
+        \begin{proof}
+            将 $\alpha_1x_1 + \alpha_2x_2 + \cdots + \alpha_rx_r = 0$ 看作一个有 $n$ 个方程, $r$ 个未知量的齐次线性方程组.
+            那么
+            \begin{equation}
+                \widetilde{\alpha}_1x_1 + \widetilde{\alpha}_2x_2 + \cdots + \widetilde{\alpha}_rx_r = 0
+            \end{equation}
+            便是由原方程组减少 $n-j$ 个方程组成的方程组, 即 $j\ (j < n)$ 个方程, $r$ 个未知量的齐次线性方程组, 已知 $\widetilde{\alpha}_1, \widetilde{\alpha}_2, \cdots, \widetilde{\alpha}_r$ 线性无关, 即这 $j$ 个方程组成的方程组只有零解.
+            因此再添加 $n-j$ 个方程不会影响解, 因此 $\alpha_1x_1 + \alpha_2x_2 + \cdots + \alpha_rx_r = 0$ 也只有零解, 即 $\alpha_1, \cdots, \alpha_r$ 也线性无关. 
+        \end{proof}
+    \item % 10
+        \begin{proof}
+            用反证法. 假设 $\alpha_1, \alpha_2, \cdots, \alpha_m$ 线性相关, 由定理 3.4.2 可知其中至少有一个向量可以由其余向量线性表示, 不妨假定这个向量为 $\alpha_1$.
+            即
+            \[
+                \alpha_1 = l_2\alpha_2 + \cdots + l_m\alpha_m,    
+            \]
+            又由已知条件 $\beta$ 可由 $\alpha_1, \cdots, \alpha_m$ 线性表示, 即
+            \[
+                \beta = k_1\alpha_1 + \cdots + k_m\alpha_m,    
+            \]
+            将 $\alpha_1$ 的线性表示带入上式, 有
+            \begin{align*}
+                \beta &= k_1(l_2\alpha_2 + \cdots + l_m\alpha_m) + k_2\alpha_2 + \cdots + k_m\alpha_m \\
+                &=  (k_1l_2 + k_2)\alpha_2 + \cdots + (k_1l_m + k_m)\alpha_m  
+            \end{align*}
+            即 $\beta$ 可由 $\alpha_2, \cdots, \alpha_m$ 这 $m - 1$ 个向量线性表示, 与题意矛盾. 因此 $\alpha_1, \cdots, \alpha_m$ 线性无关.
+        \end{proof}
+    \item 11
+\end{enumerate}
+\end{document}
