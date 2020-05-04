@@ -1,12 +1,12 @@
-% @author Shuning Zhang
-% @date 2020-05-03
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb, amsthm}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2020-05-03
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         \begin{multicols}{2}
@@ -135,6 +135,22 @@
             \end{align*}
             即 $\beta$ 可由 $\alpha_2, \cdots, \alpha_m$ 这 $m - 1$ 个向量线性表示, 与题意矛盾. 因此 $\alpha_1, \cdots, \alpha_m$ 线性无关.
         \end{proof}
-    \item 11
+    \item % 11
+        \begin{proof}
+            记 $B = (\beta_1, \beta_2, \cdots, \beta_n)$, 其中 $\beta_i$ 是 $m\times1$ 矩阵, 那么
+            \[
+                AB = (A\beta_1, \cdots, A\beta_n) = I_n = (e_1, \cdots, e_n),    
+            \]
+            即 $A\beta_i = e_i$. 考虑
+            \[
+                k_1\beta_1 + k_2\beta_2 + \cdots + k_n\beta_n = 0,
+            \]
+            在上式两边同乘以 $A$, 有
+            \begin{align*}
+                0 = A(k_1\beta_1 + \cdots + k_n\beta_n) &= k_1A\beta_1 + \cdots + k_nA\beta_n \\
+                &= k_1e_1 + \cdots + k_ne_n = (k_1, \cdots, k_n)',  
+            \end{align*}
+            即 $k_1 = k_2 = \cdots = k_n = 0$, 因此 $\beta_1, \cdots, \beta_n$ 线性无关.
+        \end{proof}
 \end{enumerate}
-\end{document}
+% \end{document}
