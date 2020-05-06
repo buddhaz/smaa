@@ -1,0 +1,100 @@
+% @author Shuning Zhang
+% @date 2020-05-06
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{proof}
+            用反证法, 不妨假设有两个向量可由前面的向量线性表示, 分别为 $\alpha_i$ 和 $\alpha_j$ ($1 \leq i < j \leq r$). 那么
+            \[
+                \alpha_i = k_0\beta + k_1\alpha_1 + \cdots + k_{i-1}\alpha_{i-1},    
+            \]
+            其中 $k_0 \not= 0$, 若 $k_0 = 0$, 即 $\alpha_i$ 可由 $\alpha_1, \cdots, \alpha_{i-1}$ 线性表示,
+            这与 $\alpha_1, \cdots, \alpha_r$ 线性无关即其中任一向量都不能由其它向量线性表示相矛盾.
+            那么
+            \[
+                \beta = - \frac{k_1}{k_0}\alpha_1 - \cdots - \frac{k_{i-1}}{k_0}\alpha_{i-1} + \frac{1}{k_0}\alpha_i.
+            \]
+            另一方面, 对 $\alpha_j$ 也有
+            \[
+                \alpha_j = l_0\beta + l_1\alpha_1 + \cdots + l_{j-1}\alpha_{j-1},    
+            \]
+            再将 $\beta$ 由 $\alpha_1, \cdots, \alpha_i$ 的线性表示带入上式, 即得 $\alpha_j$ 由 $\alpha_1, \cdots, \alpha_{j-1}$ 线性表示, 同样与 $\alpha_1, \cdots, \alpha_r$ 线性无关相矛盾.
+            因此最多只能有一个 $\alpha_i$ 可由前面的向量线性表示.
+        \end{proof}
+    \item % 2
+        \begin{proof}
+            $\{1, x, \cdots, x^n\}$ 显然可表示不超过 $n$ 次的全体多项式, 现只需证明它们是线性无关的即可. 任取 $k_0, k_1, \cdots, k_n \in \mathbb{R}$, 令
+            \[
+                k_0 + k_1x + \cdots + k_nx^n = 0.    
+            \]
+        \end{proof}
+    \item % 3
+    \item % 4
+        \begin{proof}
+            由已知条件, 即 $\{\alpha_1, \cdots, \alpha_n\}$ 可由 $\{\beta_1, \cdots, \beta_n\}$ 线性表示. 再由基的定义, $\beta_i\ (1\leq i \leq n)$ 显然可被 $\{\alpha_1, \cdots, \alpha_n\}$ 线性表示.
+            因此 $\{\alpha_1, \cdots, \alpha_n\}$ 与 $\{\beta_1, \cdots, \beta_n\}$ 等价, 等价的向量组秩相等, 因此
+            \[
+                \mathrm{rank}\{\beta_1, \cdots, \beta_n\} = n,
+            \]
+            即 $\beta_1, \cdots, \beta_n$ 线性无关. 另外 $V$ 中任一向量可被 $\alpha_1, \cdots, \alpha_n$ 线性表示, $\alpha_1, \cdots, \alpha_n$ 又可由 $\beta_1, \cdots, \beta_n$ 线性表示.
+            由线性表示的传递性即可知 $V$ 中任一向量可由 $\beta_1, \cdots, \beta_n$ 线性表示. 因此 $\{\beta_1, \cdots, \beta_n\}$ 也是 $V$ 的一组基.
+        \end{proof}
+    \item % 5
+        \begin{proof}
+            因 $V$ 中任一向量唯一地由 $\alpha_1, \cdots, \alpha_n$ 线性表示, 故 $\alpha_1, \cdots, \alpha_n$ 线性无关 (定理 3.4.3), 因此 $\alpha_1, \cdots, \alpha_n$ 是 $V$ 的基.
+        \end{proof}
+    \item % 6
+        \begin{proof}
+            先证 $E_{ij}\ (1 \leq i \leq m, 1 \leq j \leq n)$ 线性无关. 显然要使
+            \[
+                \sum_{i=1}^m\sum_{j=1}^nk_{ij}E_{ij} =
+                \left(
+                    \begin{array}{cccc}
+                        k_{11} & k_{12} & \cdots & k_{1n} \\
+                        k_{21} & k_{22} & \cdots & k_{2n} \\
+                        \vdots & \vdots &  & \vdots \\
+                        k_{m1} & k_{m2} & \cdots & k_{mn}
+                    \end{array}    
+                \right)
+                = 0_{m\times n},  
+            \]
+            只能 $k_{ij} = 0\ (1 \leq i \leq m, 1 \leq j \leq n)$, 故 $E_{ij}\ (1 \leq i \leq m, 1 \leq j \leq n)$ 线性无关.
+            另一方面, 数域 $\mathbb{K}$ 上全体 $m \times n$ 矩阵显然可由 $E_{ij}\ (1 \leq i \leq m, 1 \leq j \leq n)$ 线性表示.
+            因此 $E_{ij}\ (1 \leq i \leq m, 1 \leq j \leq n)$ 是一组基.
+        \end{proof}
+    \item % 7
+        在第 6 题中, 取 $E_{ij}\ (1 \leq i \leq n, i \leq j \leq n)$ 即可组成 $V$ 的一组基, 因此
+        \[
+            \mathrm{dim}V = 1 + 2 + \cdots + n = \frac{n(n+1)}{2}.    
+        \]
+    \item % 8
+        \begin{proof}
+            $n$ 阶对称阵是 $n$ 阶矩阵的子集, $n$ 阶矩阵组成的集合是线性空间, 自然 $n$ 阶对称阵也是线性空间.
+            现在设 $E_{ij}$ 是这样的矩阵, 当 $i \not= j$ 时, 在其 $(i, j)$ 位置和 $(j, i)$ 为位置上元素为 $1$, 当 $i = j$ 时, 在其 $(i, i)$ 位置上为 $1$.
+            那么
+            \[
+                \sum_{i=1}^n\sum_{j=i}^nk_{ij}E_{ij} =
+                \left(
+                    \begin{array}{cccc}
+                        k_{11} & k_{12} & \cdots & k_{1n} \\
+                        k_{12} & k_{22} & \cdots & k_{2n} \\
+                        \vdots & \vdots &  & \vdots \\
+                        k_{1n} & k_{2n} & \cdots & k_{nn}
+                    \end{array}    
+                \right)
+                = 0_{m\times n},  
+            \]
+            因此 $E_{ij}\ (1 \leq i \leq n, i \leq j \leq n)$ 线性无关. 且可以表示所有的对称阵. 因此
+            \[
+                \mathrm{dim}V = 1 + 2 + \cdots + n = \frac{n(n+1)}{2}. \qedhere
+            \]
+        \end{proof}
+    \item % 9
+\end{enumerate}
+\end{document}
