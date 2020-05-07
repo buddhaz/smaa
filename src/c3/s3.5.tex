@@ -1,12 +1,12 @@
-% @author Shuning Zhang
-% @date 2020-05-06
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb, amsthm}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2020-05-06
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         \begin{proof}
@@ -29,12 +29,22 @@
         \end{proof}
     \item % 2
         \begin{proof}
-            $\{1, x, \cdots, x^n\}$ 显然可表示不超过 $n$ 次的全体多项式, 现只需证明它们是线性无关的即可. 任取 $k_0, k_1, \cdots, k_n \in \mathbb{R}$, 令
-            \[
-                k_0 + k_1x + \cdots + k_nx^n = 0.    
-            \]
+            $\{1, x, \cdots, x^n\}$ 显然可表示不超过 $n$ 次的全体多项式, 现只需证明它们是线性无关的即可.
+            用反证法. 假设 $1, x, \cdots, x^n$ 线性相关, 则其中至少有一个向量可由其余向量线性表示, 但这是做不到的.
+            因为 $1, x, \cdots, x^n$ 中每个元素的次数都不相同, 仅用线性组合是无法表示的. 因此 $1, x, \cdots, x^n$ 中任意向量都不能由其余向量线性表示, 即它们线性无关.
+            
+            用同样的方法可以证明 $\{1, x+1, \cdots, (x+1)^n\}$ 也是线性无关的. 另一方面 $\{1, x, \cdots, x^n\}$ 中任意向量可由 $\{1, x+1, \cdots, (x+1)^n\}$ 线性表示,
+            由线性表示的传递性可知任一次数不超过 $n$ 的多项式可由 $\{1, x+1, \cdots, (x+1)^n\}$ 线性表示.
         \end{proof}
     \item % 3
+        \begin{proof}
+            由第 2 题的证明过程可知 $V$ 是一个 $n$ 维线性空间, 因此只要证明 $f_i(x)\ (1\leq i\leq n)$ 线性无关即可证明它是 $V$ 的一组基.
+            取 $k_1, k_2, \cdots, k_n \in \mathrm{K}$, 令
+            \[
+                k_1f_1(x) + k_2f_2(x) + \cdots + k_nf_n(x) = 0,    
+            \]
+            再依次令 $x = a_1, x=a_2, \cdots, x=a_n$ 即可得 $k_1 = k_2 = \cdots = k_n = 0$, 即 $f_i(x)\ (1\leq i\leq n)$ 线性无关.
+        \end{proof}
     \item % 4
         \begin{proof}
             由已知条件, 即 $\{\alpha_1, \cdots, \alpha_n\}$ 可由 $\{\beta_1, \cdots, \beta_n\}$ 线性表示. 再由基的定义, $\beta_i\ (1\leq i \leq n)$ 显然可被 $\{\alpha_1, \cdots, \alpha_n\}$ 线性表示.
@@ -96,5 +106,13 @@
             \]
         \end{proof}
     \item % 9
+        {\color{red}remained}
+        \begin{proof}
+            显然 $V$ 是线性空间, 满足加法和数乘运算. 考虑 $\{1, \sqrt[3]{2}, \sqrt[3]{4}\}$ 这组向量, 显然 $V$ 中任意向量都可由其表示, 令
+            \[
+                p_1 + p_2\sqrt[3]{2} + p_3\sqrt[3]{4} = 0,   
+            \]
+            其中 $p_1, p_2, p_3 \in \mathbb{Q}$,
+        \end{proof}
 \end{enumerate}
-\end{document}
+% \end{document}
